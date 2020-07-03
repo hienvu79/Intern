@@ -1,0 +1,108 @@
+
+  .lead{text-align:center;}
+  .lead a{color:#fff;}
+  h1{padding-top:30px;}
+  .hr{width:30%;border:1px solid #F67777;}
+  label {
+      text-decoration: line-through;
+      font-weight: 400;
+      margin-right: 6px;
+      text-align:center;
+  }
+  em {
+      font-style: normal;}
+  .lead p {
+      font-size: 0.9em;
+      color: #B4B4B4;
+  }
+  .bg-dark span{
+    padding: 3px;
+    border: 3px dotted #f67777;
+    color: #f67777;
+    }
+  .display-5 a{color:#18d0ec;}
+  
+  .carousel-inner img { 
+    width: 100%; /* Set width to 100% */
+    margin: auto;
+  }
+  .carousel-caption h3 {
+    color: #fff !important;
+  }
+  @media (max-width: 600px) {
+    .carousel-caption {
+      display: none; /* Hide the carousel text when the screen is less than 600 pixels wide */
+    }
+  }
+  
+  .thumbnail {
+    padding: 0 0 15px 0;
+    border: none;
+    border-radius: 0;
+  }
+  .thumbnail p {
+    margin-top: 15px;
+    color: #555;
+  }
+.buttons_added {
+    opacity:1;
+    display:inline-block;
+    display:-ms-inline-flexbox;
+    display:inline-flex;
+    white-space:nowrap;
+    vertical-align:top;
+}
+.is-form {
+    overflow:hidden;
+    position:relative;
+    background-color:#f9f9f9;
+    height:2.2rem;
+    width:1.9rem;
+    padding:0;
+    text-shadow:1px 1px 1px #fff;
+    border:1px solid #ddd;
+}
+.is-form:focus,.input-text:focus {
+    outline:none;
+}
+.is-form.minus {
+    border-radius:4px 0 0 4px;
+}
+.is-form.plus {
+    border-radius:0 4px 4px 0;
+}
+.input-qty {
+    background-color:#fff;
+    height:2.2rem;
+    text-align:center;
+    font-size:1rem;
+    display:inline-block;
+    vertical-align:top;
+    margin:0;
+    border-top:1px solid #ddd;
+    border-bottom:1px solid #ddd;
+    border-left:0;
+    border-right:0;
+    padding:0;
+}
+.input-qty::-webkit-outer-spin-button,.input-qty::-webkit-inner-spin-button {
+    -webkit-appearance:none;
+    margin:0;
+}
+.buttons_added input{width:40px;height:35px;}
+.add-to-cart{width:200px;height:45px;line-height:3px;}
+.buy-now{width:200px;height:45px;line-height:3px;margin-left:20px;}
+.description h4{text-decoration:underline;}
+.product_title h3{
+    font-size: 20px;
+    font-weight: 700;
+    margin: 0 0 5px;
+    line-height: initial;}
+.price h4{
+    font-size: 18px;
+    opacity: .92;
+    font-weight: bold;}
+    .col-sm-12 {
+    margin-left: -15px;
+    float: left;}
+    .col-md-5{padding-left:30px;}

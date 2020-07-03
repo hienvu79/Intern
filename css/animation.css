@@ -1,0 +1,31 @@
+
+	
+@-webkit-keyframes my {
+    0% { color:  #f67777; } 
+    50% { color: #fff;  } 
+    100% { color: #f67777;  } 
+    }
+    @-moz-keyframes my { 
+    0% { color: #f67777;  } 
+    50% { color: #fff;  }
+    100% { color: #f67777;  } 
+    }
+    @-o-keyframes my { 
+    0% { color: #f67777; } 
+    50% { color: #fff; } 
+    100% { color: #f67777;  } 
+    }
+    @keyframes my { 
+    0% { color: #f67777;  } 
+    50% { color: #fff;  }
+    100% { color: #f67777;  } 
+    } 
+    .test {
+            background:#343a40;
+            font-size:24px;
+            font-weight:bold;
+    -webkit-animation: my 700ms infinite;
+    -moz-animation: my 700ms infinite; 
+    -o-animation: my 700ms infinite; 
+    animation: my 700ms infinite;
+   }
