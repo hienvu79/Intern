@@ -1,88 +1,138 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <?php require_once 'block/block_head.php';?>
 
-</head>
-<style>
-</style>
 <?php
-
-$menus = [
-  [
-    'name' => 'Trang Chủ',
-    'icon' => 'fas fa-home',
-    'href' => 'index.php'
-  ],
-  [
-    'name' => 'Áo',
-    'icon' => 'fas fa-tshirt',
-    'href' => 'category.php?cat_id=1',
-    'subs' => [
-      [
-        'name' => 'Ao khoac',
-        'icon' => 'fas fa-tshirt',
-        'href' => 'category.php?cat_id=12'
-      ],
-      [
-        'name' => 'Ao len',
-        'icon' => 'fas fa-tshirt',
-        'href' => 'category.php?cat_id=13'
-      ]
-    ]
-  ],
-  [
-    'name' => 'Quần',
-    'icon' => 'fas fa-socks',
-    'href' => 'category.php?cat_id=2'
-  ],
-  [
-    'name' => 'Phụ Kiện',
-    'icon' => 'fas fa-user-secret',
-    'href' => 'category.php?cat_id=3'
-  ],
-  [
-    'name' => 'Liên Hệ',
-    'icon' => 'fas fa-fw fa-address-card',
-    'href' => 'contact.php'
-  ],
-  [
-    'name' => 'Tài Khoản',
-    'icon' => 'fas fa-user-secret',
-    'href' => '#'
-  ],
-];
-
+  require_once 'dbconnect.php';
 ?>
 
-<body>
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-  <a class="navbar-brand" href="#">
-    <span><img src="https://i.imgur.com/AAFRpDU.png" width="40" height="40" alt=""></span>
-  </a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
-    
-    <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-      <?php 
-        foreach($menus as $menu){
-      ?>
-      <li class="nav-item active">
-        <a class="nav-link" href="<?php echo $menu['href'];?>"><i class="<?php echo  $menu['icon'];?>"></i><?php echo $menu['name'];?></a>
-      </li>
-        <?php }?>
-    </ul>
-    <ul class="nav navbar-nav navbar-right">
-    <form class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-      <button class="btn btn-secondary my-2 my-sm-0" type="submit"><i class="fas fa-fw fa-search"></i></button>
-    </form>
-    </ul>
-  </div>
-</nav>
 
-</body>
-<?php require_once 'block/block_foottag.php'?>
+  <!doctype html>
+  <html lang="en">
+  <?php 
+    foreach($products as $item){
+      $id = $item['product_id'];
+      $masp = $_GET['masp'];
+      if($masp==$id){
+  ?>
+  <head>
+    <title><?php echo $item['product_title'];?></title>
+    <link rel="icon" href="https://i.imgur.com/AAFRpDU.png">
+    <?php require_once 'block/block_head.php';?>
+    
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/product.css" rel="stylesheet">
+  <body>
+
+    <?php
+    
+    require_once 'block/block_menu.php';
+      
+  ?>
+
+  <?php
+  require_once 'block/block_banner.php';
+  ?>
+  
+<div class="container"> 
+  <div class="row">
+    <div class="col-md-7 col-sm-12 col-xs-12">
+      <div id="myCarousel" class="carousel slide" data-ride="carousel">
+        <!-- Indicators -->
+        <ol class="carousel-indicators">
+          <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+          <li data-target="#myCarousel" data-slide-to="1"></li>
+          <li data-target="#myCarousel" data-slide-to="2"></li>
+          <li data-target="#myCarousel" data-slide-to="3"></li>
+        </ol>
+
+        <!-- Wrapper for slides -->
+        <div class="carousel-inner" role="listbox">
+          <div class="item active">
+            <img src="<?php echo $item['product_img']; ?>" alt="hinh" width="50%" height="300px">   
+          </div>
+
+          <div class="item">
+            <img src="<?php echo $item['product_img1']; ?>" alt="hinh1" width="50%" height="300px">   
+          </div>
+        
+          <div class="item">
+            <img src="<?php echo $item['product_img2']; ?>" alt="hinh2" width="50%" height="300px">     
+          </div>
+          <div class="item">
+            <img src="<?php echo $item['product_img3']; ?>" alt="hinh2" width="50%" height="300px">     
+          </div>
+        </div>
+
+        <!-- Left and right controls -->
+        <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+          <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+          <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+    </div>
+  </div>
+    <div class="col-md-5 col-sm-12 col-xs-12">
+      <div class="product_title"><h3><?php echo $item['product_title'];?></h3></div>
+      <div class="category"><span><a href="category.php?cat_id=<?php echo $item['category_id'];?>">#<?php echo $item['category'];?></a></span></div>
+      <hr style="border: 1px rotated gray">
+      <span class="test" style="background-color: #fff; ">Sale</span>
+      <div class="price"><label><h4><?php echo $item['product_price'];?> <?php echo $item['currency'];?></h4></label></div>
+      <h3><em><?php echo $item['product_discount'];?> <?php echo $item['currency'];?></em></h3>
+      <div class="buttons_added">
+        <input class="minus is-form" type="button" value="-">
+        <input aria-label="quantity" class="input-qty" max="10" min="1" name="" type="number" value="1">
+        <input class="plus is-form" type="button" value="+">
+      </div>
+      <br><br>
+      <div class="cart">
+        <button type="button" id="add-to-cart" class="add-to-cart" name="add">
+        <span>Thêm vào giỏ</span></button>
+        <button type="button" id="buy-now" class="buy-now" name="buy">
+        <span>Mua ngay</span></button>
+      </div>
+      <br>
+      <div class="description"><h4>Mô tả</h4></div>
+        <p><?php echo $item['product_description'];?></p>
+    </div>
+</div> 
+<?php
+         
+      
+          }
+         
+           
+          
+        }
+        ?>
+  <hr  width="100%" align="center" size="20px" />
+      
+      <?php
+        require_once 'block/block_footer.php';
+      ?>
+  </div>
+  <?php
+        require_once 'block/block_foottag.php';
+      ?>
+    </body>
+    <script>
+$('input.input-qty').each(function() {
+  var $this = $(this),
+    qty = $this.parent().find('.is-form'),
+    min = Number($this.attr('min')),
+    max = Number($this.attr('max'))
+  if (min == 0) {
+    var d = 0
+  } else d = min
+  $(qty).on('click', function() {
+    if ($(this).hasClass('minus')) {
+      if (d > min) d += -1
+    } else if ($(this).hasClass('plus')) {
+      var x = Number($this.val()) + 1
+      if (x <= max) d += 1
+    }
+    $this.attr('value', d).val(d)
+  })
+})
+  </script>
 </html>

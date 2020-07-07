@@ -1,4 +1,18 @@
+<style>
+.btn-secondary {
+    color: #fff;
+    background-color: #aea79f;
+    border-color: #aea79f;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0; 
+}
+.form-inline .form-control {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;    
+}
+.bg-danger {background-color: #772953!important;}
 
+</style>
 <?php
 
 $menus = [
@@ -66,11 +80,12 @@ $menus = [
       </li>
         <?php }?>
     </ul>
-    <ul class="nav navbar-nav navbar-right">
+    <div class="nav navbar-nav navbar-right">
     <form class="form-inline my-2 my-lg-0">
       <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-      <button class="btn btn-secondary my-2 my-sm-0" type="submit"><i class="fas fa-fw fa-search"></i></button>
+      <button class="btn btn-secondary my-2 my-sm-0" type="button"><i class="fas fa-fw fa-search"></i></button>
     </form>
-    </ul>
+    </div>
   </div>  
 </nav>
+<br><br><br><br>

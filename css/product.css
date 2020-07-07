@@ -34,7 +34,6 @@
       display: none; /* Hide the carousel text when the screen is less than 600 pixels wide */
     }
   }
-  
   .thumbnail {
     padding: 0 0 15px 0;
     border: none;
@@ -103,4 +102,20 @@
     font-size: 18px;
     opacity: .92;
     font-weight: bold;}
+.nav-link {
+    font-size: 16px;
+    padding: 8px;
+  }
+.navbar-brand img{margin-top: -10px;}
+.form-inline .form-control {
+  margin-top: 5px;
+  height: 40px;}
 
+  .mt-sm-0, .my-sm-0 {
+    margin-top: 5px!important;
+}
+header img{
+  margin-left: -15px;
+  }
+  .carousel-control-next, .carousel-control-prev {
+    background-color: #5555554d;}

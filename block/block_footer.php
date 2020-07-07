@@ -1,14 +1,11 @@
 <style>
- p{
-    padding-left:20px;
-}
+
 .container p {
     font-size: 20px;
     font-family: serif;
 }
-
-
-
+a{color:#e95420;}
+a:hover{color:#2eecc9; text-decoration:none;}
 </style>
 <footer>
     <div class="row">
@@ -35,6 +32,3 @@
     </div>
     <div id="fb-root"></div>
     <script async defer crossorigin="anonymous" src="https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v7.0&appId=863436470739340&autoLogAppEvents=1"></script>
-    <?php 
-    require_once 'block/block_foottag.php'
-    ?>

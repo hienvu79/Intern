@@ -87,8 +87,6 @@
       ?>
   </div>
       
-          
-      
   <?php
         require_once 'block/block_foottag.php';
       ?>
