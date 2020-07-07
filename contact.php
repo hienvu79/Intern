@@ -9,6 +9,11 @@
     margin-left: 170px;
 }
 p{font-size:20px;}
+.col-sm-6,.col-sm-12 .form-control{
+    width: 100%;
+    height: 40px;
+    margin-bottom: 20px;
+}
 </style>
 <body>
 
@@ -62,7 +67,7 @@ p{font-size:20px;}
       require_once 'block/block_footer.php';
     ?>
    </div>
-   
+  
     
     
 

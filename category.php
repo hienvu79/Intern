@@ -59,9 +59,10 @@
         $loai = $_GET['cat_id'];
         if($id==$loai){
     ?>
+      
       <div class="bg-dark col-sm-4 text-center text-white overflow-hidden">
         <div class="my-3 py-3">
-        <h2 class="display-5"><a href="product.php?masp=<?php echo $item['product_id'];?>"><?php echo $item['product_title'];?></a></h2>
+        <h3 class="display-5"><a href="product.php?masp=<?php echo $item['product_id'];?>"><?php echo $item['product_title'];?></a></h3>
         <span class="test">Sale</span><br>
         <p class="lead"><label><?php echo $item['product_price'];?></label><em><?php echo $item['product_discount'];?> 
         <?php echo $item['currency'];?></em></p>

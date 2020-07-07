@@ -1,6 +1,4 @@
-<head>
-  <link href="css/menu.css" rel="stylesheet">
-</head>
+
 <?php
 
 $menus = [
@@ -51,20 +49,28 @@ $menus = [
 ?>
 
 <nav class="navbar fixed-top navbar-expand-sm bg-danger navbar-dark">
-  <a class="navbar-brand" href="index.php"><img src="https://i.imgur.com/AAFRpDU.png" alt="Logo" class="nav-logo"></a>
+  <a class="navbar-brand" href="#">
+    <img src="https://i.imgur.com/AAFRpDU.png" width="40" height="40" alt="">
+  </a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
-    <?php 
-      foreach($menus as $menu){
-    ?>
+    <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+      <?php 
+        foreach($menus as $menu){
+      ?>
       <li class="nav-item dropdown">
         <a class="nav-link" href="<?php echo $menu['href'];?>"><i class="<?php echo  $menu['icon'];?>"></i><?php echo $menu['name'];?></a>
       </li>
-      <?php }?>
+        <?php }?>
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+    <form class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+      <button class="btn btn-secondary my-2 my-sm-0" type="submit"><i class="fas fa-fw fa-search"></i></button>
+    </form>
     </ul>
   </div>  
-  <form class="form-inline" action="/action_page.php">
-    <input class="form-control mr-sm-2" type="text" placeholder="Search">
-    <a href="#" class="btn btn-info btn-lg"><span class="fas fa-search"></span></a>
-  </form>
 </nav>

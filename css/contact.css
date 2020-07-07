@@ -31,9 +31,7 @@
   width: auto;
   vertical-align: middle;
 }
-.form-inline .form-control {
-  margin-left: 10px;
-}
+
 .glyphicon {
   FONT-VARIANT: JIS04;
   position: relative;
@@ -59,7 +57,6 @@
   border-radius: 4px;
 }
 
-.form-control{margin: 10px 0px 10px;}
 .btn-success {
   color: #fff;
   background-color: #e95420;

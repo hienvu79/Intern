@@ -45,18 +45,18 @@
         <!-- Wrapper for slides -->
         <div class="carousel-inner" role="listbox">
           <div class="item active">
-            <img src="https://i.imgur.com/qV499ig.jpg" alt="hinh" width="50%" height="300px">   
+            <img src="<?php echo $item['product_img']; ?>" alt="hinh" width="50%" height="300px">   
           </div>
 
           <div class="item">
-            <img src="https://i.imgur.com/X6EdUyH.jpg" alt="hinh1" width="50%" height="300px">   
+            <img src="<?php echo $item['product_img1']; ?>" alt="hinh1" width="50%" height="300px">   
           </div>
         
           <div class="item">
-            <img src="https://i.imgur.com/2CSRMKt.jpg" alt="hinh2" width="50%" height="300px">     
+            <img src="<?php echo $item['product_img2']; ?>" alt="hinh2" width="50%" height="300px">     
           </div>
           <div class="item">
-            <img src="https://i.imgur.com/UTJTs3i.jpg" alt="hinh2" width="50%" height="300px">     
+            <img src="<?php echo $item['product_img3']; ?>" alt="hinh2" width="50%" height="300px">     
           </div>
         </div>
 
@@ -75,7 +75,9 @@
       <div class="product_title"><h3><?php echo $item['product_title'];?></h3></div>
       <div class="category"><span><a href="category.php?cat_id=<?php echo $item['category_id'];?>">#<?php echo $item['category'];?></a></span></div>
       <hr style="border: 1px rotated gray">
-      <div class="price"><h4><?php echo $item['product_price'];?></h4></div>
+      <span class="test" style="background-color: #fff; ">Sale</span>
+      <div class="price"><label><h4><?php echo $item['product_price'];?> <?php echo $item['currency'];?></h4></label></div>
+      <h3><em><?php echo $item['product_discount'];?> <?php echo $item['currency'];?></em></h3>
       <div class="buttons_added">
         <input class="minus is-form" type="button" value="-">
         <input aria-label="quantity" class="input-qty" max="10" min="1" name="" type="number" value="1">
@@ -94,8 +96,12 @@
     </div>
 </div> 
 <?php
-            
+         
+      
           }
+         
+           
+          
         }
         ?>
   <hr  width="100%" align="center" size="20px" />
@@ -108,7 +114,7 @@
         require_once 'block/block_foottag.php';
       ?>
     </body>
-    <script>//<![CDATA[
+    <script>
 $('input.input-qty').each(function() {
   var $this = $(this),
     qty = $this.parent().find('.is-form'),
@@ -127,5 +133,5 @@ $('input.input-qty').each(function() {
     $this.attr('value', d).val(d)
   })
 })
-//]]></script>
-  </html>
+  </script>
+</html>
